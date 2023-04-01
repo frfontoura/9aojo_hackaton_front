@@ -5,8 +5,7 @@ on:
     branches:
       - master
 jobs:
-  # To build the project
-  build-tambola:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out code
@@ -18,7 +17,7 @@ jobs:
       - name: Installing dependencies
         run: npm install
       - name: Building project
-        run: npm run build
+        run: CI= npm run build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
