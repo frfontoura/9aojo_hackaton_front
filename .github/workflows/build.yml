@@ -1,4 +1,5 @@
-name: Build
+name: GitHub Actions Build
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀name: Build
 on:
   push:
     branches:
@@ -11,7 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
+      - name: Install dependencies too
+        run: npm i
       - name: Install dependencies
         run: npm install
 
